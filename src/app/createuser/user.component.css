@@ -1,0 +1,44 @@
+.view-container {
+    max-width: 1280px;
+    max-height: calc(100vh - 190px);
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 0px 36px 0px #dddbdb;
+    border-radius: 7px;
+    padding: 15px 10px 20px;    
+}
+h3 {
+    font-family: system-ui;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 15px 0 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: system-ui;
+    thead tr {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+    }
+    th {
+        padding: 10px 15px;
+        white-space: nowrap;
+        text-align: left;
+    }
+    td {
+        padding: 10px 15px;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+}

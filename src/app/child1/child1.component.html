@@ -1,0 +1,13 @@
+<p>child1 works!</p>
+
+<h3>{{name | uppercase}}</h3>
+
+<input class="form-control" type="text" [(ngModel)]="enteredname"  />
+
+<h3>{{displayValue | uppercase}}</h3>
+
+<h3>{{enteredname | uppercase}}</h3>
+
+<h2>{{showchildtext}}</h2>
+<input type="text" (ngModelChange)="onchangeopchildName" />
+

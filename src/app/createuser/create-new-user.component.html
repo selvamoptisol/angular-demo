@@ -1,0 +1,92 @@
+<h2>Create User</h2>
+<div class="container">
+    <form #userForm="ngForm">
+        <div class="form-group">
+            <div class="label">First Name</div>
+            <div>         
+                <input type="text" name="firstName" [(ngModel)]="user.firstName" #firstnameModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && firstnameModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Last Name</div>
+            <div>
+                <input type="text" name="lastName" [(ngModel)]="user.lastName" #lastnameModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && lastnameModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Email</div>
+            <div>
+                <input type="email" name="email" [(ngModel)]="user.email" #emailModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && emailModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Phone Number</div>
+            <div>
+                <input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber" #phoneNumberModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && phoneNumberModel.invalid" required />
+            </div>
+        </div>        
+        <div class="form-group">
+            <div class="label">Qualification</div>
+            <div>
+                <input type="text" name="qualification" [(ngModel)]="user.qualification" #qualificationModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && qualificationModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">City</div>
+            <div>
+                <input type="text" name="city" [(ngModel)]="user.city" #cityModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && cityModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">State</div>
+            <div>
+                <input type="text" name="city" [(ngModel)]="user.state" #stateModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && stateModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Zip Code</div>
+            <div>
+                <input type="text" name="zipCode" [(ngModel)]="user.zipCode" #zipCodeModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && zipCodeModel.invalid" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Country</div>
+            <div>
+                <input type="text" name="country" [(ngModel)]="user.country" #countryModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && countryModel.invalid" required />
+            </div>
+        </div>        
+        <div class="form-group">
+            <div class="label">Address1</div>
+            <div>
+                <textarea rows="2" name="address1" [(ngModel)]="user.address1" #address1Model="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && address1Model.invalid" required></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Address2</div>
+            <div>
+                <textarea rows="2" name="address2" [(ngModel)]="user.address2" #address2Model="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && address2Model.invalid" required></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="label">Comments</div>
+            <div>
+                <textarea rows="2" name="comments" [(ngModel)]="user.comments" #commentsModel="ngModel"
+                class="form-control" [class.is-invalid]="userForm.submitted && commentsModel.invalid" required></textarea>
+            </div>
+        </div>
+        <div class="" style="width: 97.5%;overflow: hidden;text-align: right;padding: 15px 0 0;">
+            <button type="button" (click)="saveUser(userForm)">Submit</button>
+        </div>
+    </form>
+</div>

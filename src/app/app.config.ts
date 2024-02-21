@@ -1,0 +1,1 @@
+export var API_HOST = "http://54.202.218.249:9501";
