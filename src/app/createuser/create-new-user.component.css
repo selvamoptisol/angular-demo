@@ -1,5 +1,4 @@
-h2 {
-    font-family: system-ui;
+h2 {    
     position: absolute;
     top: 0;
     left: 0;
@@ -22,7 +21,6 @@ h2 {
     padding: 35px 10px 20px;    
 }
 .form-group {
-    font-family: system-ui;
     width: 29%;
     float: left;
     padding: 0 20px 20px;
@@ -45,12 +43,10 @@ textarea {
 button {
     padding: 12px 20px;
     border: none;
-    font-family: system-ui;
     text-transform: uppercase;
     font-weight: 600;
     border-radius: 5px;
-    background: #d7d3d3;
-    background: #4b5fed;
+    background: #1833f1;
     cursor: pointer;
     color: #fff;
 }
@@ -68,4 +64,9 @@ button {
     border-left: none;
     border-right: none;
     outline: none;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
 }
