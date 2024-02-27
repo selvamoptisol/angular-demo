@@ -50,6 +50,11 @@ button {
     cursor: pointer;
     color: #fff;
 }
+.btn-back {
+    background: #73747e;
+    color: #fff;
+    margin-right: 15px;
+}
 .form-control {
     display: block;
     width: 100%;

@@ -1,4 +1,6 @@
-<h2>Create User</h2>
+<h2>
+    <ng-container *ngIf="!isupdate">Create User</ng-container>
+    <ng-container *ngIf="isupdate">Edit User</ng-container></h2>
 <div class="container">
     <form #userForm="ngForm">
         <div class="form-group">
@@ -87,7 +89,10 @@
         </div>
         <div class="" style="width: 97.5%;overflow: hidden;text-align: right;padding: 15px 0 0;display: flex;justify-content: space-between;align-items: center;">
             <div class="error-message"><div *ngIf="isError">Fill all required fields.</div></div>
-            <button type="button" (click)="saveUser(userForm)">Submit</button>
+            <div class="">
+                <button type="button" class="btn-back" [routerLink]="['/user']">Back</button>
+                <button type="button" (click)="saveUser(userForm)">Submit</button>
+            </div>            
         </div>
     </form>
 </div>

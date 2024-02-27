@@ -23,13 +23,19 @@ export class UserComponent implements OnInit {
     this.userService.getAllUser()
       .subscribe(
         (user: any) => {
-          console.log(user);
           this.userList = user;
-          console.log(this.userList);
         })
   }
   editUser(user: any) {
-    console.log(user);
+  }
+
+  deleteUser(id:any){
+    this.userService.removeUser(id)
+    .subscribe(
+      (res: any) => {
+      //  this.user =res;
+
+      })
   }
 
 }

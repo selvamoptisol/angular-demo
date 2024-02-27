@@ -8,6 +8,7 @@ import { UserComponent } from './user.component';
 export const route: Routes = [
   { path: '', component: UserComponent  ,pathMatch: 'full'},
   { path: 'create', component: CreateNewUserComponent  ,pathMatch: 'full'},
+  { path: 'update/:id', component: CreateNewUserComponent  ,pathMatch: 'full'},
 
 ];
 

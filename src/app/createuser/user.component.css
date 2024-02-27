@@ -19,6 +19,16 @@ h2 {
     text-align: center;
     margin: 15px 0 0;
 }
+button {
+    padding: 12px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 5px;
+    background: #1833f1;
+    cursor: pointer;
+    color: #fff;
+}
 table {
     border-collapse: collapse;
     width: 100%;

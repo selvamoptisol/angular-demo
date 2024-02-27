@@ -12,21 +12,32 @@ export class CreateNewUserComponent implements OnInit {
   user: User = new User;
   id: any;
   isError: boolean = false;
-
+  isupdate: boolean = false;
 
   constructor(private userService: UserService, private activateroute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.user = new User();
+   
     this.getAllUser();
+    this.activateroute.params.subscribe((params: Params) => {
+      this.id = params['id'];
 
+      if (this.id) {
+        this.getUserById(this.id);
+        this.isupdate = true;
+      } else {
+        this.user = new User();
+       
+      }
+    });
   }
 
   getUserById(id: any) {
     this.userService.getUserById(id)
       .subscribe(
         (res: any) => {
-          console.log(res);
+          this.user =res;
+
         })
   }
 
@@ -34,19 +45,14 @@ export class CreateNewUserComponent implements OnInit {
     this.userService.getAllUser()
       .subscribe(
         (res: any) => {
-          console.log(res);
         })
   }
 
   saveUser(form: any) {
-    console.log(this.user);
-    console.log(form.valid)
     if (form.valid) {
-      console.log("122")
        this.userService.saveUser(this.user)
          .subscribe(
            (res: any) => {
-             console.log(res);
            })
     }
     else {
