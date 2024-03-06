@@ -13,12 +13,12 @@ export class UserService {
     saveUser(user: any) {
         return this.http.post(API_HOST+'/api/users', user)
     }
-  
+
     removeUser(id: any) {
-        var formData = {
-            value: id
-        }
-        return this.http.post(API_HOST+'/api/users', formData)
+      //  var formData = {
+      //      value: id
+      //  }
+        return this.http.post(API_HOST+'/api/users/', +id)
     }
 
     getAllUser() {
@@ -28,5 +28,7 @@ export class UserService {
     getUserById(id: any) {
         return this.http.get(API_HOST+'/api/users/' + id)
     }
+
+    
 
 }

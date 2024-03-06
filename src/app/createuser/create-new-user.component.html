@@ -5,7 +5,7 @@
     <form #userForm="ngForm">
         <div class="form-group">
             <div class="label">First Name <span style="color: red;font-size: 14px;font-weight: bold">*</span></div>
-            <div>         
+            <div>
                 <input type="text" name="firstName" [(ngModel)]="user.firstName" #firstnameModel="ngModel"
                 class="form-control" [class.is-invalid]="userForm.submitted && firstnameModel.invalid" required />
             </div>
@@ -30,7 +30,7 @@
                 <input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber" #phoneNumberModel="ngModel"
                 class="form-control" [class.is-invalid]="userForm.submitted && phoneNumberModel.invalid" required />
             </div>
-        </div>        
+        </div>
         <div class="form-group">
             <div class="label">Qualification <span style="color: red;font-size: 14px;font-weight: bold">*</span></div>
             <div>
@@ -65,7 +65,7 @@
                 <input type="text" name="country" [(ngModel)]="user.country" #countryModel="ngModel"
                 class="form-control" [class.is-invalid]="userForm.submitted && countryModel.invalid" required />
             </div>
-        </div>        
+        </div>
         <div class="form-group">
             <div class="label">Address1 <span style="color: red;font-size: 14px;font-weight: bold">*</span></div>
             <div>
@@ -92,7 +92,8 @@
             <div class="">
                 <button type="button" class="btn-back" [routerLink]="['/user']">Back</button>
                 <button type="button" (click)="saveUser(userForm)">Submit</button>
-            </div>            
+
+            </div>
         </div>
     </form>
 </div>

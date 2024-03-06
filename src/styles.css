@@ -1,5 +1,7 @@
 body {
     font-family: system-ui !important;
+    position: relative;
+    margin: 0;
 }
 .btn {
     margin: 0 5px;
@@ -16,3 +18,22 @@ body {
     background: #ed5959 !important;
     color: #fff;
 }
+/** SCROLLBAR STARTS HERE  */
+* {
+  scrollbar-color: Gainsboro White ;
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+    background: #dcdcdc;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+/** SCROLLBAR ENDS HERE **/

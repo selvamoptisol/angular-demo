@@ -1,7 +1,7 @@
 <h2>View User <button type="button" [routerLink]="['/user/create']" style="float: right;margin-right: 35px;">Add New User</button> </h2>
 <div class="view-container">
     <div class="">
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -24,8 +24,8 @@
                     <td>{{user.comments}}</td>
                     <td>{{user.address1}},{{user.address2}}</td>
                     <td>{{user.city}}, {{user.state}}, {{user.country}}</td>
-                    <td>{{user.zipCode}}</td>                 
-                    <td><button class="btn btn-primary btn-sm"
+                    <td>{{user.zipCode}}</td>
+                    <td style="text-align: center;"><button class="btn btn-primary btn-sm"
                         [routerLink]="['/user/update/'+user.id]" >Edit</button>
                         <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button></td>
                 </tr>

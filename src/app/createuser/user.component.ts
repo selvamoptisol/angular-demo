@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/users.model';
 import { UserService } from '../services/user.services';
 import { ActivatedRoute } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-user',
   templateUrl: 'user.component.html',
@@ -23,6 +23,7 @@ export class UserComponent implements OnInit {
     this.userService.getAllUser()
       .subscribe(
         (user: any) => {
+          console.log(user)
           this.userList = user;
         })
   }
@@ -30,12 +31,26 @@ export class UserComponent implements OnInit {
   }
 
   deleteUser(id:any){
-    this.userService.removeUser(id)
-    .subscribe(
-      (res: any) => {
-      //  this.user =res;
+    (Swal as any).fire({
+       title: "Are you sure?",
+       text: "You Want To Remove It!",
+       icon: "warning",
+       showCancelButton: true,
+       confirmButtonColor: "#3085d6",
+       cancelButtonColor: "#d33",
+       confirmButtonText: "Yes, Remove it!"
+     }).then((result: any) => {
+       if (result.value) {
+         //console.log("23")
+         this.userService.removeUser(id)
+         .subscribe(
+           (res: any) => {
 
-      })
-  }
 
+           })
+        }
+
+  })
+
+}
 }

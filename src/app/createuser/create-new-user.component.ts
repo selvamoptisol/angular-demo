@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/users.model';
 import { UserService } from '../services/user.services';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params ,Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-create-new-user',
@@ -14,10 +15,10 @@ export class CreateNewUserComponent implements OnInit {
   isError: boolean = false;
   isupdate: boolean = false;
 
-  constructor(private userService: UserService, private activateroute: ActivatedRoute) { }
+  constructor(private userService: UserService, private activateroute: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
-   
+
     this.getAllUser();
     this.activateroute.params.subscribe((params: Params) => {
       this.id = params['id'];
@@ -27,7 +28,7 @@ export class CreateNewUserComponent implements OnInit {
         this.isupdate = true;
       } else {
         this.user = new User();
-       
+
       }
     });
   }
@@ -53,11 +54,15 @@ export class CreateNewUserComponent implements OnInit {
        this.userService.saveUser(this.user)
          .subscribe(
            (res: any) => {
+             console.log(res);
+             this.router.navigate(['/user']);
            })
     }
     else {
       this.isError = true;
     }
   }
+
+
 
 }
