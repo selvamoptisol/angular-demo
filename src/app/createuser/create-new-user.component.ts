@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/users.model';
 import { UserService } from '../services/user.services';
 import { ActivatedRoute, Params ,Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -28,7 +29,6 @@ export class CreateNewUserComponent implements OnInit {
         this.isupdate = true;
       } else {
         this.user = new User();
-
       }
     });
   }
@@ -38,7 +38,6 @@ export class CreateNewUserComponent implements OnInit {
       .subscribe(
         (res: any) => {
           this.user =res;
-
         })
   }
 
@@ -55,7 +54,18 @@ export class CreateNewUserComponent implements OnInit {
          .subscribe(
            (res: any) => {
              console.log(res);
-             this.router.navigate(['/user']);
+            
+              (Swal as any).fire({
+                title: "Saved Successfully",
+                text: "success",
+                type: 'info',
+                confirmButtonText: 'OK'
+              }).then((result: any) => {
+                if (result.value) {
+                  this.router.navigate(['/user']);
+                }
+              })
+           
            })
     }
     else {

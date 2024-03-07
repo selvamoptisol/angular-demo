@@ -18,7 +18,7 @@ export class UserService {
       //  var formData = {
       //      value: id
       //  }
-        return this.http.post(API_HOST+'/api/users/', +id)
+        return this.http.delete(API_HOST+'/api/users/'+id)
     }
 
     getAllUser() {
@@ -29,6 +29,6 @@ export class UserService {
         return this.http.get(API_HOST+'/api/users/' + id)
     }
 
-    
+
 
 }

@@ -1,13 +1,14 @@
 .view-container {
-    max-height: calc(100vh - 65px);
+    max-height: calc(100vh - 50px);
     overflow-y: auto;
-    margin: 0 25px;
-    box-shadow: 0px 1px 7px -1px #dddbdb;
+    margin: 25px;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15) !important;
+    border-radius: .375rem;
 }
 h2 {
-    text-align: center;
     margin: 15px 0;
-    font-size: 17px;
+    font-size: 1.0625rem;
+    padding-left: 15px;
 }
 button {
     padding: 5px;
@@ -18,6 +19,7 @@ button {
     cursor: pointer;
     color: #fff;
     font-size: 10px;
+    box-shadow: none !important;
 }
 table {
     border-collapse: collapse;
@@ -28,16 +30,32 @@ table {
         top: 0;
         background-color: #fff;
     }
+    tbody {
+      tr {
+        &:last-child {
+          td {
+            border-bottom:none;
+          }
+        }
+      }
+    }
     th {
         padding: 10px 15px;
         white-space: nowrap;
         text-align: left;
-        background: #e9e5e5;
+        text-transform: uppercase;
+        border-top: 1px solid #e9ecef;
+        border-bottom: 1px solid #e9ecef !important;
+        color: #8898aa;
+        vertical-align: middle;
+        font-weight: 400;
+        background-color: #f6f9fc;
     }
     td {
         padding: 10px 15px;
         white-space: nowrap;
         text-align: left;
+        vertical-align: middle;
     }
 
 }

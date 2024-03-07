@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
   user: User = new User;
   userList: Array<User> = [];
 
-  constructor(private userService: UserService,private activateroute: ActivatedRoute) { }
+  constructor(private userService: UserService, private activateroute: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = new User();
@@ -30,27 +30,37 @@ export class UserComponent implements OnInit {
   editUser(user: any) {
   }
 
-  deleteUser(id:any){
+  deleteUser(id: any) {
     (Swal as any).fire({
-       title: "Are you sure?",
-       text: "You Want To Remove It!",
-       icon: "warning",
-       showCancelButton: true,
-       confirmButtonColor: "#3085d6",
-       cancelButtonColor: "#d33",
-       confirmButtonText: "Yes, Remove it!"
-     }).then((result: any) => {
-       if (result.value) {
-         //console.log("23")
-         this.userService.removeUser(id)
-         .subscribe(
-           (res: any) => {
+      title: "Are you sure?",
+      text: "You Want To Remove It!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Remove it!"
+    }).then((result: any) => {
+      if (result.value) {
+        //console.log("23")
+        this.userService.removeUser(id)
+          .subscribe(
+            (res: any) => {
+              console.log(res);
 
+              (Swal as any).fire({
+                title: 'Deleted Successfully',
+                text: "Successfully",
+                type: 'info',
+                confirmButtonText: 'OK'
+              }).then((result: any) => {
+                if (result.value) {
+                  this.getAllUser();
+                }
 
-           })
-        }
+              })
+            })
 
-  })
-
-}
+      }
+    })
+  }
 }
