@@ -53,11 +53,9 @@ export class CreateNewUserComponent implements OnInit {
        this.userService.saveUser(this.user)
          .subscribe(
            (res: any) => {
-             console.log(res);
-            
               (Swal as any).fire({
                 title: "Saved Successfully",
-                text: "success",
+                text: "Success",
                 type: 'info',
                 confirmButtonText: 'OK'
               }).then((result: any) => {
@@ -65,7 +63,7 @@ export class CreateNewUserComponent implements OnInit {
                   this.router.navigate(['/user']);
                 }
               })
-           
+
            })
     }
     else {

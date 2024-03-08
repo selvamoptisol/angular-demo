@@ -23,7 +23,6 @@ export class UserComponent implements OnInit {
     this.userService.getAllUser()
       .subscribe(
         (user: any) => {
-          console.log(user)
           this.userList = user;
         })
   }
@@ -41,12 +40,9 @@ export class UserComponent implements OnInit {
       confirmButtonText: "Yes, Remove it!"
     }).then((result: any) => {
       if (result.value) {
-        //console.log("23")
         this.userService.removeUser(id)
           .subscribe(
             (res: any) => {
-              console.log(res);
-
               (Swal as any).fire({
                 title: 'Deleted Successfully',
                 text: "Successfully",
